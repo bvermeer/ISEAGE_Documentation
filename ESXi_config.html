@@ -1,0 +1,235 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<div id="container">
+	<div id="header">
+		<!--Main heading for the webpage -->
+    <h1>
+			ISEMaker Documentation
+		</h1>
+	</div>
+	<div id="navigation">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</div>
+	<div id="content-container1">
+		<div id="content-container2">
+		
+			<!-- Left column -->
+			<div id="section-navigation">
+				<ul>
+					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
+					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
+					<ul style="padding-left:2em">
+						<li><a href="ESXi_install.html">1a. Details on Installing ESXi</li>
+						<li><a href="ESXi_IP.html">1b. Set a static IP Address on ESXi</li>
+					</ul>
+					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
+					<li><a href="ESXi_Install_VMs.html">3. Install the Virtual Machines</a></li>
+				</ul>
+			</div>
+			
+			<!-- Center column --> 
+			<div id="content">
+				<h2>
+					ESXi
+				</h2>
+				<p>
+					ESXi is free (registration required) bare metal hypervisor that allows guest virtual machines to be run directly on the host server with little additional overhead. ESXi allows virtual networks to be built inside of it with multiple virtual machines.
+				</p>
+				
+				<h2>
+					Download ESXi
+				</h2>
+				<p>
+					First, download the image for <a href="https://my.vmware.com/web/vmware/evalcenter?p=free-esxi5&lp=default"> ESXi 5.5 </a>. Before the image can be downloaded, you must create a free account with VMware and log in. After logging in, download the ISO image for ESXi 5.5. Also note, near the top of the page is the license key that you will need to register ESXi with later. 
+				</p>
+				
+				<!-- Add the image for the ESXi key (figure 1) -->
+				<br />
+				<p class="figure_center" id="figure_1"> <img src="images/esxi_license.png" alt="ESXi License" width="60%"> 
+				<br />
+				<br />
+				Figure 1: Location of ESXi key</p>
+				<br />
+				
+				<h2>
+					Install ESXi
+				</h2>
+				<p>
+					After downloading the ESXi ISO image, install ESXi on your server (the default settings are fine). If you need further information on installing ESXi, follow the directions in <a href="ESXi_install.html"> Details on Installing ESXi </a>. 
+				</p>
+					
+					
+				<p>
+					After ESXi has been installed, you will be presented with a screen which looks similar to <a href="#figure_2"> Figure 2 </a>.
+				</p>
+				
+				<!-- Add the image for the ESXi main page (figure 2) -->
+				<br />
+				<p class="figure_center" id="figure_2"> <img src="images/ESXi_main_screen.jpg" alt="ESXi Main Screen" width="70%"> 
+				<br />
+				<br />
+				Figure 2: ESXi Main Screen</p>
+				<br />
+				
+				
+				<h2>
+					Map Network Interfaces on ESXi
+				</h2>
+				<p>
+					After installing ESXi, one of the first things that should be done is to map and label the physical network adapters (NICs) on the server. To do this we will individually hook up the physical NICs to a switch or router and see which interface shows as active in ESXi. First, press the <b> F2 </b> key to enter the ESXi configuration page. Enter your root password and then press <b> Enter. </b>
+				</p>
+				
+				<!-- Add the image for the ESXi password (figure 3) -->
+				<br />
+				<p class="figure_center" id="figure_3"> <img src="images/9-Password.png" alt="ESXi Password" width="50%"> 
+				<br />
+				<br />
+				Figure 3: ESXi Password</p>
+				<br />
+				
+				<p>
+					Use the arrow keys to select <b> Configure Management Network </b> and then press enter.
+				</p>
+				
+				<!-- Add the image for the ESXi Configure Management Network (figure 4) -->
+				<br />
+				<p class="figure_center" id="figure_4"> <img src="images/10-System_Config.png" alt="Configure Management Network" width="70%"> 
+				<br />
+				<br />
+				Figure 4: Configure Management Network</p>
+				<br />
+				
+				<p>
+					Press enter to select <b> Network Adapters. </b> You will then be with a screen that looks similar to <a href="#figure_5"> Figure 5. </a>
+				</p>
+				
+				<!-- Add the image for the ESXi NIC (figure 5) -->
+				<br />
+				<p class="figure_center" id="figure_5"> <img src="images/13-Network_Adapter.png" alt="ESXi Network Adapters" width="70%"> 
+				<br />
+				<br />
+				Figure 5: ESXi Network Adapters</p>
+				<br />
+				
+				<p>
+					If any of the NICs are currently connected to anything, the status for that NIC will show up ad connected on this screen. One by one, hook up to NICs on the server to either a switch or a router. Exit out of the Network Adapters dialog box by pressing the <b> Esc </b> key and then re-enter the Network Adapters dialog box by pressing the <b> Enter </b> key. The Network Adapters dialog box should now show a different VMNIC as connected. Repeat this process for all of the NICs on the server and either write down the NIC mapping or label the NICs on the server. You will need this information later to properly connect the server.
+				</p>
+				
+				
+				<h2 id="Configure_ESXi">
+					Configuring ESXi
+				</h2>
+				<p>
+					To configure ESXi, you must first download and install the vSphere Client (Windows only). To do this, on a separate Windows machine that is on the same network as the server, open a web browser and navigate to the web address given on the ESXi main screen (see <a href="#figure_2"> Figure 2 </a> for a reference of where to find the ESXi server IP address). If you receive a warning about the site's security certificate not being trusted, ignore the warning and proceed anyway. After navigating to the ESXi server IP address, you will see a screen similar to <a href="#figure_3"> Figure 3 </a>.
+				</p>
+				
+				<!-- Add the image for the ESXi server web page (figure 3) -->
+				<br />
+				<p class="figure_center" id="figure_3"> <img src="images/ESXi_web_page.png" alt="ESXi Server Web Page" width="35%"> 
+				<br />
+				<br />
+				Figure 3: ESXi Server Web Page</p>
+				<br />
+				
+				<p>
+					Click on the "Download vSphere Client" link to download the vSphere client installer from the ESXi server. After the vSphere client is downloaded, install it. After installing the vSphere client, run the program. You will be presented with a window similar to <a href="#figure_4"> Figure 4 </a>.
+				</p>
+				
+				<!-- Add the image for the vSphere client login window screenshot (figure 4) -->
+				<br />
+				<p class="figure_center" id="figure_4"> <img src="images/vSphere_client.png" alt="vSphere Client Login Window" width="40%"> 
+				<br />
+				<br />
+				Figure 4: vSphere client login window</p>
+				<br />
+				
+				<p>
+					Enter the IP address of your ESXi server (the same one used to download the ESXi client). The username is root, and the password is the password you chose when setting up the ESXi server. After logging into vSphere you should see a screen similar to <a href="#figure_5"> Figure 5 </a>.
+				</p>
+				
+				<!-- Add the image for the vSphere client (figure 5) -->
+				<br />
+				<p class="figure_center" id="figure_5"> <img src="images/vSphere_Main.png" alt="vSphere Client Main Window" width="80%"> 
+				<br />
+				<br />
+				Figure 5: vSphere Client Main Window</p>
+				<br />
+				
+				<p>
+					After logging into the vSphere client, the first thing to do is to add the ESXi license key into vSphere.
+				</p>
+				
+				<h2>
+					ESXi License Key Registration
+				</h2>
+				<p>
+					<ul>
+						<li> After logging into the vSphere client, go to the <b> Configuration Tab </b> </li>
+						
+							<!-- Add the image for the vSphere config tab (figure 6) -->
+							<br />
+							<p class="figure_center" id="figure_6"> <img src="images/vSphere_Config_Tab.png" alt="vSphere Configuration Tab" width="60%"> 
+							<br />
+							<br />
+							Figure 6: vSphere Configuration Tab</p>
+							<br />
+						
+						<li> Next, click the <b> Licensed Features </b> link inside of the Software box on the left side of the screen. </li>
+						
+							<!-- Add the image for the vSphere license features (figure 7) -->
+							<br />
+							<p class="figure_center" id="figure_7"> <img src="images/vSphere_License_Features.png" alt="vSphere License Features" width="25%"> 
+							<br />
+							<br />
+							Figure 7: vSphere License Features</p>
+							<br />
+						
+						<li> Click the <b> edit </b> link in the upper right hand side of the screen </li>
+						
+							<!-- Add the image for the vSphere license edit (figure 8) -->
+							<br />
+							<p class="figure_center" id="figure_8"> <img src="images/vSphere_License_Edit.png" alt="vSphere License Edit" width="25%"> 
+							<br />
+							<br />
+							Figure 8: vSphere License Edit</p>
+							<br />
+						
+						<li> Select the <b> Assign a new license key to the host </b> box </li>
+						
+							<!-- Add the image for the vSphere enter key (figure 9) -->
+							<br />
+							<p class="figure_center" id="figure_9"> <img src="images/vSphere_Enter_Key.png" alt="vSphere Enter Key" width="40%"> 
+							<br />
+							<br />
+							Figure 9: vSphere Enter Key</p>
+							<br />
+						
+						<li> Enter your license key (this can be found <a href="https://my.vmware.com/web/vmware/evalcenter?p=free-esxi5&lp=default"> here </a>) in the box and click the <b> OK </b> button.
+					</ul>
+					
+					
+				After setting up the license key on ESXi, you are now ready to set up the <a href="ESXi_VM_Network_config.html"> Virtual Network </a> inside of ESXi.
+					
+				</p>
+
+			<!-- Right column -->
+			</div>
+			<div id="aside">
+				<h3>
+					Overview	
+				</h3>
+				<p>
+					In this section you will download and install ESXi onto your server. ESXi is a bare-metal hypervisor that provide a lightweight framework for Virtual Machines
+					to run on top of.	
+				</p>
+			</div>
+			<div id="footer">
+        Updated: September 9, 2014
+			</div>
+		</div>
+	</div>
+</div>

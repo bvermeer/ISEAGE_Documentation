@@ -1,0 +1,140 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<div id="container">
+	<div id="header">
+		<!--Main heading for the webpage -->
+    <h1>
+			ISEMaker Documentation
+		</h1>
+	</div>
+	<div id="navigation">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</div>
+	<div id="content-container1">
+		<div id="content-container2">
+		
+			<!-- Left column -->
+			<div id="section-navigation">
+				<ul>
+					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
+					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
+					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
+					<li><a href="ESXi_Install_VMs.html">3. Install the Virtual Machines</a></li>
+				</ul>
+			</div>
+			
+			<!-- Center column --> 
+			<div id="content">
+				<h2>
+					ISEMaker
+				</h2>
+				<p>
+					ISEMaker is a collection of virtual machines that ISEAGE runs on top of. ISEAGE is a network virtualization program that allows for the simulation of 
+					various network scenarios and helps to simulate several different types of network attacks. <a href="#figure_1"> Figure 1</a> shows the topology of the 
+					VM networks and machines within ISEMaker.
+				</p>
+				
+				<!-- Add the image for the ISEMaker topology (figure 1) -->
+				<br />
+				<p class="figure_center" id="figure_1"> <img src="images/Network_layout.png" alt="Figure 1: ISEMaker Topology" width="75%"> 
+				<br />
+				<br />
+				Figure 1: ISEMaker Topology</p>
+				<br />
+				
+				<h2>
+					ISEMaker Component Overview
+				</h2>
+				<p>
+					Here is a table that gives a brief overview of the various Virtual Machines in ISEMaker and what their function is:
+				</p>
+				
+				<table class="reference" style="width:60%">
+					<tr>
+						<th>Machine Name</th>
+						<th>Function</th>		
+					</tr>
+					<tr>
+						<td>Snowbank</td>
+						<td>This is the main firewall between ISEAGE and the Internet. All traffic directed to the internet is routed through here.</td>		
+					</tr>
+					<tr>
+						<td>Snowflake</td>
+						<td>This is the machine that controls the configuration and management of ISEAGE running on the Board VMs. The ISEAGE configuration file
+						is stored on this machine and distributed to the Board VMs. </td>		
+					</tr>
+					<tr>
+						<td>Gatekey</td>
+						<td>This machines allows for debugging of ISEAGE. It is not necessary for the operation of ISEAGE and is present for debugging and testing purposes.</td>		
+					</tr>
+					<tr>
+						<td>Keyhole1</td>
+						<td>This machine has a squid proxy server running on it (http://199.100.16.100:3128) that allows access to HTTP and FTP sites on the internet (no HTTPS).
+						This machine also has a Name Server running on it which resolves the internal names of the ISEAGE machines. </td>		
+					</tr>
+					<tr>
+						<td>Keyhole2</td>
+						<td>This machine has a squid proxy server running on it that forwards internet requests from Keyhole1 onto Snowbank.</td>		
+					</tr>
+					<tr>
+						<td>Board 1</td>
+						<td>This is one of the VMs on which the ISEAGE network traffic is routed through. This particular board is set up to handle the traffic for Blue Teams 1-15. </td>		
+					</tr>
+					<tr>
+						<td>Board 2</td>
+						<td>This is one of the VMs on which the ISEAGE network traffic is routed through. This particular board is set up to handle the traffic for Blue Teams 16-30. </td>		
+					</tr>
+					<tr>
+						<td>Board 3</td>
+						<td>This is one of the VMs on which the ISEAGE network traffic is routed through. This particular board is set up to handle the traffic for the Red and Green teams. 
+						Also, all traffic for Yellowsnow will be routed through this board. </td>		
+					</tr>
+					<tr>
+						<td>Board 4</td>
+						<td>This is one of the VMs on which the ISEAGE network traffic is routed through. This particular board is set up to handle the traffic for the white team. </td>		
+					</tr>
+					<tr>
+						<td>Board 5</td>
+						<td>This is one of the VMs on which the ISEAGE network traffic is routed through. This particular board is set up to act as a TAP board. This means that all
+						ISEAGE traffic is routed through this board and can be monitored on the TAP interface. </td>		
+					</tr>
+					<tr>
+						<td>ISCorE</td>
+						<td>This VM runs the ISCorE software that monitors the Blue Team machines and sees which services are actively running on the Blue Team machines. </td>		
+					</tr>
+				</table>
+
+				
+				<br />
+				<br />
+				
+				<h2>
+					Building ISEMaker
+				</h2>
+				<p>
+					ISEMaker consists of several different virtual machines working together to create ISEAGE. The first step in building ISEMaker is to install and configure 
+					VMware ESXi to host the various virtual machines on a single server. For instruction on configuring ESXi, go to the <a href="ESXi_config.html"> ESXi configuration page. </a>
+				</p>
+
+			<!-- Right column -->
+			</div>
+			<div id="aside">
+				<h3>
+					Overview	
+				</h3>
+				<p>
+					These instructions will guide you through installing and setting up your own instance of ISEMaker (the platform that runs the ISEAGE environment). The
+					first section talks about downloading and installing VMWare's ESXi. The second section talks about setting up the virtual network. The final section 
+					talks about installing the individual Virtual Machines for ISEMaker onto ESXi.	
+				</p>
+			</div>
+			<div id="footer">
+        Updated: September 9, 2014
+			</div>
+		</div>
+	</div>
+</div>
