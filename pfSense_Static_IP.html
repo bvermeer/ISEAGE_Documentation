@@ -1,0 +1,117 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<div id="container">
+	<div id="header">
+		<!--Main heading for the webpage -->
+    <h1>
+			ISEMaker Documentation
+		</h1>
+	</div>
+	<div id="navigation">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</div>
+	<div id="content-container1">
+		<div id="content-container2">
+		
+			<!-- Left column -->
+			<div id="section-navigation">
+				<ul>
+					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
+					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
+					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
+					<li><a href="ESXi_Install_VMs.html">3. Install the Virtual Machines</a></li>
+				</ul>
+			</div>
+			
+			<!-- Center column --> 
+			<div id="content">
+				<h2>
+					Configure Static IP on Snowbank 
+				</h2>
+				<p>
+					This section is optional and only required if a static IP address if required for ISEAGE. By default, ISEAGE is configured to automatically obtain
+					an IP address on the External Network using DHCP.
+				</p>
+				
+				<h2>
+					Getting to Snowbank's Configuration Page		
+				</h2>
+			<ol>
+				<p>
+					<li>The Snowbank virtual machine is running the pfSense firewall software which is configure through a locally hosted webpage. To access Snowbank's configuration
+					webpage we will first start of the Gatekey Virtual Machine. First, go to the <b>Virtual Machine</b> tab in vSphere Client and <b>right-click on Gatekey</b> and go to
+					<b>Open Console.</b></li>	
+				</p>
+
+
+
+				<!-- Add the image for starting the Gatekey Console (figure 1) -->
+				<br />
+				<p class="figure_center" id="figure_1"> <img src="images/Gatekey_console.png" alt="Figure 1: Open Gatekey Console" width="75%"> 
+				<br />
+				<br />
+				Figure 1: Open Gatekey Console</p>
+				<br />
+
+				<p>
+					<li>A new window should pull up that allows you to interact with the Gatekey Virtual Machine. Most likely the screensaver will be up. Click anywhere on the
+					screen and the desktop should appear momentarily. <b>Click on the Firefox logo</b> in the lower left-hand side of the screen to start up Firefox. </li>
+				</p>
+
+				<!-- Add the image for starting Firefox on Gatekey (figure 2) -->
+				<br />
+				<p class="figure_center" id="figure_2"> <img src="images/Gatekey_desktop.png" alt="Figure 2: Open Firefox" width="75%"> 
+				<br />
+				<br />
+				Figure 2: Open Firefox</p>
+				<br />
+				
+				<p>
+					<li>The homepage on Gatekey is set to the ISEAGE control webpage. Go to the IP address of Snowbank (<b>192.168.1.1</b>) to access Snowbank's configuration page.
+					The username and password should be automatically filled in. If not the username is <b>admin</b> and the password is <b>iseage</b>. </li>
+				</p>
+				
+				<!-- Add the image for logging into Snowbank (figure 3) -->
+				<br />
+				<p class="figure_center" id="figure_3"> <img src="images/Snowbank_config_address.png" alt="Figure 3: Log into Snowbank" width="75%"> 
+				<br />
+				<br />
+				Figure 3: Log into Snowbank</p>
+				<br />
+				
+				<p>
+					<li>After logging into Snowbank you will be brought to Snowbanks main configuration screen which will look similar to <a href="#figure_4"> Figure 4 </a> </li>
+				</p>
+
+				<!-- Add the image Snowbank's Configuration screen (figure 4) -->
+				<br />
+				<p class="figure_center" id="figure_4"> <img src="images/Snowbank_main_config.png" alt="Figure 4: Snowbank Main Configuration Screen" width="75%"> 
+				<br />
+				<br />
+				Figure 4: Snowbank Main Configuration Screen</p>
+				<br />
+
+			</ol>	
+				
+
+			<!-- Right column -->
+			</div>
+			<div id="aside">
+				<h3>
+					Overview	
+				</h3>
+				<p>
+					This section is optional and is only required if you would like your instance of ISEAGE to have a static IP address. This can be handy when accessing the
+					ISEAGE control webpage from and external network.
+				</p>
+			</div>
+			<div id="footer">
+        Updated: September 9, 2014
+			</div>
+		</div>
+	</div>
+</div>
