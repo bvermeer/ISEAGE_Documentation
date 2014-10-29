@@ -1,235 +1,205 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+[raw]
+
+<link rel="stylesheet" type="text/css" href="/wp-content/uploads/2014/10/style.css" />
 
 <div id="container">
-	<div id="header">
-		<!--Main heading for the webpage -->
-    <h1>
-			ISEMaker Documentation
-		</h1>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact us</a></li>
-		</ul>
-	</div>
-	<div id="content-container1">
-		<div id="content-container2">
-		
-			<!-- Left column -->
-			<div id="section-navigation">
-				<ul>
-					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
-					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
-					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
-					<li><a href="ESXi_Install_VMs.html">3. Install the Virtual Machines</a></li>
-				</ul>
-			</div>
+	<div id="content-container">
+		<!-- Center column --> 
+		<div id="content">
+            <h2>
+				Overview	
+			</h2>
+			<p>
+				This section is optional and is only required if you would like your instance of ISEAGE to have a static IP address. This can be handy when accessing the
+				ISEAGE control webpage from and external network.
+			</p>
+			<h2>
+				Configure Static IP on Snowbank 
+			</h2>
+			<p>
+				This section is optional and only required if a static IP address if required for ISEAGE. By default, ISEAGE is configured to automatically obtain
+				an IP address on the External Network using DHCP.
+			</p>
 			
-			<!-- Center column --> 
-			<div id="content">
-				<h2>
-					Configure Static IP on Snowbank 
-				</h2>
-				<p>
-					This section is optional and only required if a static IP address if required for ISEAGE. By default, ISEAGE is configured to automatically obtain
-					an IP address on the External Network using DHCP.
-				</p>
-				
-				<h2>
-					Getting to Snowbank's Configuration Page		
-				</h2>
-			<ol>
-				<p>
-					<li>The Snowbank virtual machine is running the pfSense firewall software which is configure through a locally hosted webpage. To access Snowbank's configuration
-					webpage we will first start of the Gatekey Virtual Machine. First, go to the <b>Virtual Machine</b> tab in vSphere Client and <b>right-click on Gatekey</b> and go to
-					<b>Open Console.</b></li>	
-				</p>
+			<h2>
+				Getting to Snowbank's Configuration Page		
+			</h2>
+		<ol>
+			<p>
+				<li>The Snowbank virtual machine is running the pfSense firewall software which is configure through a locally hosted webpage. To access Snowbank's configuration
+				webpage we will first start of the Gatekey Virtual Machine. First, go to the <b>Virtual Machine</b> tab in vSphere Client and <b>right-click on Gatekey</b> and go to
+				<b>Open Console.</b></li>	
+			</p>
 
 
 
-				<!-- Add the image for starting the Gatekey Console (figure 1) -->
-				<br />
-				<p class="figure_center" id="figure_1"> <img src="images/Gatekey_console.png" alt="Figure 1: Open Gatekey Console" width="75%"> 
-				<br />
-				<br />
-				Figure 1: Open Gatekey Console</p>
-				<br />
+			<!-- Add the image for starting the Gatekey Console (figure 1) -->
+			<br />
+			<p class="figure_center" id="figure_1"><a href="/wp-content/uploads/2014/10/Gatekey_console.png"><img src="/wp-content/uploads/2014/10/Gatekey_console.png" alt="Figure 1: Open Gatekey Console" width="75%"></a>
+			<br />
+			<br />
+			Figure 1: Open Gatekey Console</p>
+			<br />
 
-				<p>
-					<li>A new window should pull up that allows you to interact with the Gatekey Virtual Machine. Most likely the screensaver will be up. Click anywhere on the
-					screen and the desktop should appear momentarily. <b>Click on the Firefox logo</b> in the lower left-hand side of the screen to start up Firefox. </li>
-				</p>
+			<p>
+				<li>A new window should pull up that allows you to interact with the Gatekey Virtual Machine. Most likely the screensaver will be up. Click anywhere on the
+				screen and the desktop should appear momentarily. <b>Click on the Firefox logo</b> in the lower left-hand side of the screen to start up Firefox. </li>
+			</p>
 
-				<!-- Add the image for starting Firefox on Gatekey (figure 2) -->
-				<br />
-				<p class="figure_center" id="figure_2"> <img src="images/Gatekey_desktop.png" alt="Figure 2: Open Firefox" width="75%"> 
-				<br />
-				<br />
-				Figure 2: Open Firefox</p>
-				<br />
-				
-				<p>
-					<li>The homepage on Gatekey is set to the ISEAGE control webpage. Go to the IP address of Snowbank (<b>192.168.1.1</b>) to access Snowbank's configuration page.
-					The username and password should be automatically filled in. If not the username is <b>admin</b> and the password is <b>iseage</b>. </li>
-				</p>
-				
-				<!-- Add the image for logging into Snowbank (figure 3) -->
-				<br />
-				<p class="figure_center" id="figure_3"> <img src="images/Snowbank_config_address.png" alt="Figure 3: Log into Snowbank" width="75%"> 
-				<br />
-				<br />
-				Figure 3: Log into Snowbank</p>
-				<br />
-				
-				<p>
-					<li>After logging into Snowbank you will be brought to Snowbanks main configuration screen which will look similar to <a href="#figure_4"> Figure 4 </a>. </li>
-				</p>
+			<!-- Add the image for starting Firefox on Gatekey (figure 2) -->
+			<br />
+			<p class="figure_center" id="figure_2"> <a href="/wp-content/uploads/2014/10/Gatekey_desktop.png"><img src="/wp-content/uploads/2014/10/Gatekey_desktop.png" alt="Figure 2: Open Firefox" width="75%"></a> 
+			<br />
+			<br />
+			Figure 2: Open Firefox</p>
+			<br />
+			
+			<p>
+				<li>The homepage on Gatekey is set to the ISEAGE control webpage. Go to the IP address of Snowbank (<b>192.168.1.1</b>) to access Snowbank's configuration page.
+				The username and password should be automatically filled in. If not the username is <b>admin</b> and the password is <b>iseage</b>. </li>
+			</p>
+			
+			<!-- Add the image for logging into Snowbank (figure 3) -->
+			<br />
+			<p class="figure_center" id="figure_3"> <a href="/wp-content/uploads/2014/10/Snowbank_config_address.png"><img src="/wp-content/uploads/2014/10/Snowbank_config_address.png" alt="Figure 3: Log into Snowbank" width="75%"> </a>
+			<br />
+			<br />
+			Figure 3: Log into Snowbank</p>
+			<br />
+			
+			<p>
+				<li>After logging into Snowbank you will be brought to Snowbanks main configuration screen which will look similar to <a href="#figure_4"> Figure 4 </a>. </li>
+			</p>
 
-				<!-- Add the image Snowbank's Configuration screen (figure 4) -->
-				<br />
-				<p class="figure_center" id="figure_4"> <img src="images/Snowbank_main_config.png" alt="Figure 4: Snowbank Main Configuration Screen" width="75%"> 
-				<br />
-				<br />
-				Figure 4: Snowbank Main Configuration Screen</p>
-				<br />
+			<!-- Add the image Snowbank's Configuration screen (figure 4) -->
+			<br />
+			<p class="figure_center" id="figure_4"> <a href="/wp-content/uploads/2014/10/Snowbank_main_config.png"><img src="/wp-content/uploads/2014/10/Snowbank_main_config.png" alt="Figure 4: Snowbank Main Configuration Screen" width="75%"> </a>
+			<br />
+			<br />
+			Figure 4: Snowbank Main Configuration Screen</p>
+			<br />
 
-				<p>
-					<li>Now go to the <b>Interfaces -> WAN</b> menu. </li>
-				</p>
+			<p>
+				<li>Now go to the <b>Interfaces -> WAN</b> menu. </li>
+			</p>
 
-				<!-- Add the image Snowbank's Configuration screen (figure 5) -->
-				<br />
-				<p class="figure_center" id="figure_5"> <img src="images/Snowbank_WAN.png" alt="Figure 5: Snowbank navigate to WAN Configuration" width="50%"> 
-				<br />
-				<br />
-				Figure 5: Snowbank navigate to WAN Configuration</p>
-				<br />
+			<!-- Add the image Snowbank's Configuration screen (figure 5) -->
+			<br />
+			<p class="figure_center" id="figure_5"> <a href="/wp-content/uploads/2014/10/Snowbank_WAN.png"><img src="/wp-content/uploads/2014/10/Snowbank_WAN.png" alt="Figure 5: Snowbank navigate to WAN Configuration" width="50%"> </a>
+			<br />
+			<br />
+			Figure 5: Snowbank navigate to WAN Configuration</p>
+			<br />
 
-				<p>
-					<li>The WAN configuration page will look similar to <a href="#figure_6"> Figure 6 </a>.  </li>
-				</p>
+			<p>
+				<li>The WAN configuration page will look similar to <a href="#figure_6"> Figure 6 </a>.  </li>
+			</p>
 
-				<!-- Add the image Snowbank's WAN Configuration screen (figure 6) -->
-				<br />
-				<p class="figure_center" id="figure_6"> <img src="images/Snowbank_WAN_main.png" alt="Figure 6: Snowbank WAN Configuration" width="75%"> 
-				<br />
-				<br />
-				Figure 6: Snowbank WAN Configuration</p>
-				<br />
+			<!-- Add the image Snowbank's WAN Configuration screen (figure 6) -->
+			<br />
+			<p class="figure_center" id="figure_6"> <a href="/wp-content/uploads/2014/10/Snowbank_WAN_main.png"><img src="/wp-content/uploads/2014/10/Snowbank_WAN_main.png" alt="Figure 6: Snowbank WAN Configuration" width="75%"> </a>
+			<br />
+			<br />
+			Figure 6: Snowbank WAN Configuration</p>
+			<br />
 
-				<p>
-					<li>Now change the IPv4 Configuration Type to <b>Static</b>.  </li>
-				</p>
+			<p>
+				<li>Now change the IPv4 Configuration Type to <b>Static</b>.  </li>
+			</p>
 
-				<!-- Add the image Snowbank's WAN static configuration (figure 7) -->
-				<br />
-				<p class="figure_center" id="figure_7"> <img src="images/Snowbank_WAN_static.png" alt="Figure 7: Static IPv4" width="50%"> 
-				<br />
-				<br />
-				Figure 7: Static IPv4</p>
-				<br />
-
-
-				<p>
-					<li>Scroll down to the <b>Static IPv4 configuration</b> section and enter the IP address and netmask (the dropdown box) you desire to Snowbank. </li>
-				</p>
-
-				<!-- Add the image Snowbank's WAN static IP configuration (figure 8) -->
-				<br />
-				<p class="figure_center" id="figure_8"> <img src="images/Snowbank_WAN_static_IP.png" alt="Figure 8: Static IPv4 IP" width="50%"> 
-				<br />
-				<br />
-				Figure 8: Static IPv4 IP</p>
-				<br />
+			<!-- Add the image Snowbank's WAN static configuration (figure 7) -->
+			<br />
+			<p class="figure_center" id="figure_7"> <a href="/wp-content/uploads/2014/10/Snowbank_WAN_static.png"><img src="/wp-content/uploads/2014/10/Snowbank_WAN_static.png" alt="Figure 7: Static IPv4" width="50%"> </a>
+			<br />
+			<br />
+			Figure 7: Static IPv4</p>
+			<br />
 
 
-				<p>
-					<li>Click on the <b>add a new one</b> link under the IPv4 Upstream Gateway section to add the information for the upstream gateway. After entering the
-					information, click on the <b>Save Gateway</b> button. </li>
-				</p>
+			<p>
+				<li>Scroll down to the <b>Static IPv4 configuration</b> section and enter the IP address and netmask (the dropdown box) you desire to Snowbank. </li>
+			</p>
 
-				<!-- Add the image Snowbank's WAN static gateway (figure 9) -->
-				<br />
-				<p class="figure_center" id="figure_9"> <img src="images/Snowbank_WAN_gateway.png" alt="Figure 9: Static Gateway" width="50%"> 
-				<br />
-				<br />
-				Figure 9: Static Gateway</p>
-				<br />
-
-				<p>
-					<li>Scroll down to the bottom of the screen and click the <b>Save</b> button.</li>
-				</p>
-
-				<!-- Add the image Snowbank's WAN Save Settings(figure 10) -->
-				<br />
-				<p class="figure_center" id="figure_10"> <img src="images/Snowbank_WAN_save.png" alt="Figure 10: Save WAN Settings" width="40%"> 
-				<br />
-				<br />
-				Figure 10: Save WAN Settings</p>
-				<br />
-
-				<p>
-					<li>Now go to the <b> System -> Routing </b> menu. </li>
-				</p>
-
-				<!-- Add the image Snowbank's Routing Settings(figure 11) -->
-				<br />
-				<p class="figure_center" id="figure_11"> <img src="images/Snowbank_routing.png" alt="Figure 11: Snowbank Routing" width="30%"> 
-				<br />
-				<br />
-				Figure 11: Snowbank Routing</p>
-				<br />
-
-				<p>
-					<li>The pfSense system does not delete old gateways when adding a new one which can sometimes lead to routing issues. To fix this, we will manually
-					delete the old gateway. Click the <b>X</b> to the right of the gateway you are not using. In my case, I wasn't using the WANGW gateway. A message will 
-					pop up asking if you are sure you want to delete the gateway. Click <b>OK</b>. </li>
-				</p>
-
-				<!-- Add the image Snowbank's Gateway Settings(figure 12) -->
-				<br />
-				<p class="figure_center" id="figure_12"> <img src="images/Snowbank_gateways.png" alt="Figure 12: Snowbank Gateways" width="75%"> 
-				<br />
-				<br />
-				Figure 12: Snowbank Gateways</p>
-				<br />
-
-				<p>
-					<li>After delete the extra gateway, click the <b>Apply changes button</b> at the top of the screen. </li>
-				</p>
-
-				<!-- Add the image Snowbank's Gateway apply changes (figure 13) -->
-				<br />
-				<p class="figure_center" id="figure_13"> <img src="images/Snowbank_gateways_confirm.png" alt="Figure 13: Apply Changes" width="75%"> 
-				<br />
-				<br />
-				Figure 13: Apply Changes</p>
-				<br />
+			<!-- Add the image Snowbank's WAN static IP configuration (figure 8) -->
+			<br />
+			<p class="figure_center" id="figure_8"> <a href="/wp-content/uploads/2014/10/Snowbank_WAN_static_IP.png"><img src="/wp-content/uploads/2014/10/Snowbank_WAN_static_IP.png" alt="Figure 8: Static IPv4 IP" width="50%"> </a>
+			<br />
+			<br />
+			Figure 8: Static IPv4 IP</p>
+			<br />
 
 
-				<p>
-					<li>Congratulations! You have successfully configured Snowbank with a static IP address. </li>
-				</p>
+			<p>
+				<li>Click on the <b>add a new one</b> link under the IPv4 Upstream Gateway section to add the information for the upstream gateway. After entering the
+				information, click on the <b>Save Gateway</b> button. </li>
+			</p>
 
-			</ol>	
-				
+			<!-- Add the image Snowbank's WAN static gateway (figure 9) -->
+			<br />
+			<p class="figure_center" id="figure_9"> <a href="/wp-content/uploads/2014/10/Snowbank_WAN_gateway.png"><img src="/wp-content/uploads/2014/10/Snowbank_WAN_gateway.png" alt="Figure 9: Static Gateway" width="50%"> </a>
+			<br />
+			<br />
+			Figure 9: Static Gateway</p>
+			<br />
 
-			<!-- Right column -->
-			</div>
-			<div id="aside">
-				<h3>
-					Overview	
-				</h3>
-				<p>
-					This section is optional and is only required if you would like your instance of ISEAGE to have a static IP address. This can be handy when accessing the
-					ISEAGE control webpage from and external network.
-				</p>
-			</div>
-			<div id="footer">
-        Updated: September 9, 2014
-			</div>
+			<p>
+				<li>Scroll down to the bottom of the screen and click the <b>Save</b> button.</li>
+			</p>
+
+			<!-- Add the image Snowbank's WAN Save Settings(figure 10) -->
+			<br />
+			<p class="figure_center" id="figure_10"> <a href="/wp-content/uploads/2014/10/Snowbank_WAN_save.png"><img src="/wp-content/uploads/2014/10/Snowbank_WAN_save.png" alt="Figure 10: Save WAN Settings" width="40%"> </a>
+			<br />
+			<br />
+			Figure 10: Save WAN Settings</p>
+			<br />
+
+			<p>
+				<li>Now go to the <b> System -> Routing </b> menu. </li>
+			</p>
+
+			<!-- Add the image Snowbank's Routing Settings(figure 11) -->
+			<br />
+			<p class="figure_center" id="figure_11"> <a href="/wp-content/uploads/2014/10/Snowbank_routing.png"><img src="/wp-content/uploads/2014/10/Snowbank_routing.png" alt="Figure 11: Snowbank Routing" width="30%"> </a>
+			<br />
+			<br />
+			Figure 11: Snowbank Routing</p>
+			<br />
+
+			<p>
+				<li>The pfSense system does not delete old gateways when adding a new one which can sometimes lead to routing issues. To fix this, we will manually
+				delete the old gateway. Click the <b>X</b> to the right of the gateway you are not using. In my case, I wasn't using the WANGW gateway. A message will 
+				pop up asking if you are sure you want to delete the gateway. Click <b>OK</b>. </li>
+			</p>
+
+			<!-- Add the image Snowbank's Gateway Settings(figure 12) -->
+			<br />
+			<p class="figure_center" id="figure_12"> <a href="/wp-content/uploads/2014/10/Snowbank_gateways.png"><img src="/wp-content/uploads/2014/10/Snowbank_gateways.png" alt="Figure 12: Snowbank Gateways" width="75%"> </a>
+			<br />
+			<br />
+			Figure 12: Snowbank Gateways</p>
+			<br />
+
+			<p>
+				<li>After delete the extra gateway, click the <b>Apply changes button</b> at the top of the screen. </li>
+			</p>
+
+			<!-- Add the image Snowbank's Gateway apply changes (figure 13) -->
+			<br />
+			<p class="figure_center" id="figure_13"> <a href="/wp-content/uploads/2014/10/Snowbank_gateways_confirm.png"><img src="/wp-content/uploads/2014/10/Snowbank_gateways_confirm.png" alt="Figure 13: Apply Changes" width="75%"> </a>
+			<br />
+			<br />
+			Figure 13: Apply Changes</p>
+			<br />
+
+
+			<p>
+				<li>Congratulations! You have successfully configured Snowbank with a static IP address. </li>
+			</p>
+
+		</ol>	
 		</div>
 	</div>
 </div>
+
+[/raw]

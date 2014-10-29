@@ -1,132 +1,99 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+[raw]
+
+<link rel="stylesheet" type="text/css" href="/wp-content/uploads/2014/10/style.css" />
 
 <div id="container">
-	<div id="header">
-		<!--Main heading for the webpage -->
-    <h1>
-			ISEMaker Documentation
-		</h1>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact us</a></li>
-		</ul>
-	</div>
-	<div id="content-container1">
-		<div id="content-container2">
-		
-			<!-- Left column -->
-			<div id="section-navigation">
-				<ul>
-					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
-					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
-					<ul style="padding-left:2em">
-						<li><a href="ESXi_install.html">1a. Details on Installing ESXi</li>
-						<li><a href="ESXi_IP.html">1b. Set a static IP Address on ESXi</li>
-					</ul>
-					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
-					<li><a href="ESXi_Install_VMs.html">3. Install the Virtual Machines</a></li>
-				</ul>
-			</div>
-			
-			<!-- Center column --> 
-			<div id="content">
-				<h2>
-					Setting up a Static IP Address for ESXi
-				</h2>
+	<div id="content-container">
+		<!-- Center column --> 
+		<div id="content">
+            <h2>
+				Overview	
+			</h2>
+			<p>
+				This section provides instructions on how to set up ESXi with a static IP address. This section is optional and is not necessary for all setups. 
 
-				<p>
-					From the main ESXi screen, press the F2 key to enter the ESXi settings screen.
-				</p>
-				
-				<!-- Add the image for the ESXi Main Screen(figure 1) -->
-				<br />
-				<p class="figure_center" id="figure_1"> <img src="images/8-Main_Screen.png" alt="ESXi Main Screen" width="70%"> 
-				<br />
-				<br />
-				Figure 1: ESXi Main Screen</p>
-				<br />
-				
-				<p>
-					Enter the root password for ESXi and then press enter.
-				</p>
-				
-				<!-- Add the image for the ESXi Password (figure 2) -->
-				<br />
-				<p class="figure_center" id="figure_2"> <img src="images/9-Password.png" alt="ESXi Password" width="50%"> 
-				<br />
-				<br />
-				Figure 2: ESXi Password</p>
-				<br />
-				
-				<p>
-					Use the arrow keys to select <b> Configure Management Network </b> and then press enter.
-				</p>
-				
-				<!-- Add the image for the ESXi Configure Management Network (figure 3) -->
-				<br />
-				<p class="figure_center" id="figure_3"> <img src="images/10-System_Config.png" alt="Configure Management Network" width="70%"> 
-				<br />
-				<br />
-				Figure 3: Configure Management Network</p>
-				<br />
-				
-				<p>
-					Use the arrow keys to select <b> IP Configuration </b> and then press enter.
-				</p>
-				
-				<!-- Add the image for the ESXi IP Configuration (figure 4) -->
-				<br />
-				<p class="figure_center" id="figure_4"> <img src="images/12-IP_Config.png" alt="IP Configuration" width="70%"> 
-				<br />
-				<br />
-				Figure 4: IP Configuration</p>
-				<br />
-				
-				<p>
-					This will pull up the IP Configuration dialogue box. Use the arrow keys to select <b> Set static IP address and network configuration </b> and then press the <b> Space Bar </b> to select the static IP address option. Now enter the IP address, subnet mask, and default gateway information for your network and then press enter.
-				</p>
-				
-				<!-- Add the image for the ESXi IP Configuration Dialog (figure 5) -->
-				<br />
-				<p class="figure_center" id="figure_5"> <img src="images/14-IP_Config_Dialog.png" alt="IP Configuration Dialogue" width="50%"> 
-				<br />
-				<br />
-				Figure 5: IP Configuration Dialogue</p>
-				<br />
-				
-				<p>
-					Press the <b> Escape </b> key a few times to return to the main ESXi screen. If you are presented with a screen similar to <a href="#figure_6"> Figure 6 </a> asking if you want to restart the management network, click the <b> Y </b> key.
-				</p>
-				
-				<!-- Add the image for the ESXi Restart Management Network (figure 6) -->
-				<br />
-				<p class="figure_center" id="figure_6"> <img src="images/15-Restart_Management.png" alt="Restart Management Network" width="50%"> 
-				<br />
-				<br />
-				Figure 6: Restart Management Network</p>
-				<br />
-				
-				<p>
-					After setting up the static IP address, <a href="ESXi_config.html#Configure_ESXi">click here</a> to continue installing ISEAGE.
-				</p>
-				
-			<!-- Right column -->
-			</div>
-			<div id="aside">
-				<h3>
-					Overview	
-				</h3>
-				<p>
-					This section provides instructions on how to set up ESXi with a static IP address. This section is optional and is not necessary for all setups. 
-	
-				</p>
-			</div>
-			<div id="footer">
-        Updated: September 9, 2014
-			</div>
+			</p>
+			<h2>
+				Setting up a Static IP Address for ESXi
+			</h2>
+
+			<p>
+				From the main ESXi screen, press the F2 key to enter the ESXi settings screen.
+			</p>
+			
+			<!-- Add the image for the ESXi Main Screen(figure 1) -->
+			<br />
+			<p class="figure_center" id="figure_1"> <a href="/wp-content/uploads/2014/10/8-Main_Screen.png"><img src="/wp-content/uploads/2014/10/8-Main_Screen.png" alt="ESXi Main Screen" width="70%"> </a>
+			<br />
+			<br />
+			Figure 1: ESXi Main Screen</p>
+			<br />
+			
+			<p>
+				Enter the root password for ESXi and then press enter.
+			</p>
+			
+			<!-- Add the image for the ESXi Password (figure 2) -->
+			<br />
+			<p class="figure_center" id="figure_2"> <a href="/wp-content/uploads/2014/10/9-Password.png"><img src="/wp-content/uploads/2014/10/9-Password.png" alt="ESXi Password" width="50%"> </a>
+			<br />
+			<br />
+			Figure 2: ESXi Password</p>
+			<br />
+			
+			<p>
+				Use the arrow keys to select <b> Configure Management Network </b> and then press enter.
+			</p>
+			
+			<!-- Add the image for the ESXi Configure Management Network (figure 3) -->
+			<br />
+			<p class="figure_center" id="figure_3"> <a href="/wp-content/uploads/2014/10/10-System_Config.png"><img src="/wp-content/uploads/2014/10/10-System_Config.png" alt="Configure Management Network" width="70%"> </a>
+			<br />
+			<br />
+			Figure 3: Configure Management Network</p>
+			<br />
+			
+			<p>
+				Use the arrow keys to select <b> IP Configuration </b> and then press enter.
+			</p>
+			
+			<!-- Add the image for the ESXi IP Configuration (figure 4) -->
+			<br />
+			<p class="figure_center" id="figure_4"> <a href="/wp-content/uploads/2014/10/12-IP_Config.png"><img src="/wp-content/uploads/2014/10/12-IP_Config.png" alt="IP Configuration" width="70%"> </a>
+			<br />
+			<br />
+			Figure 4: IP Configuration</p>
+			<br />
+			
+			<p>
+				This will pull up the IP Configuration dialogue box. Use the arrow keys to select <b> Set static IP address and network configuration </b> and then press the <b> Space Bar </b> to select the static IP address option. Now enter the IP address, subnet mask, and default gateway information for your network and then press enter.
+			</p>
+			
+			<!-- Add the image for the ESXi IP Configuration Dialog (figure 5) -->
+			<br />
+			<p class="figure_center" id="figure_5"> <a href="/wp-content/uploads/2014/10/14-IP_Config_Dialog.png"><img src="/wp-content/uploads/2014/10/14-IP_Config_Dialog.png" alt="IP Configuration Dialogue" width="50%"> </a>
+			<br />
+			<br />
+			Figure 5: IP Configuration Dialogue</p>
+			<br />
+			
+			<p>
+				Press the <b> Escape </b> key a few times to return to the main ESXi screen. If you are presented with a screen similar to <a href="#figure_6"> Figure 6 </a> asking if you want to restart the management network, click the <b> Y </b> key.
+			</p>
+			
+			<!-- Add the image for the ESXi Restart Management Network (figure 6) -->
+			<br />
+			<p class="figure_center" id="figure_6"> <a href="/wp-content/uploads/2014/10/15-Restart_Management.png"><img src="/wp-content/uploads/2014/10/15-Restart_Management.png" alt="Restart Management Network" width="50%"> </a>
+			<br />
+			<br />
+			Figure 6: Restart Management Network</p>
+			<br />
+			
+			<p>
+				After setting up the static IP address, <a href="/?page_id=214#Configure_ESXi">click here</a> to continue installing ISEAGE.
+			</p>
 		</div>
 	</div>
 </div>
+
+[/raw]

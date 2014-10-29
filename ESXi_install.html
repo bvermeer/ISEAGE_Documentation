@@ -1,151 +1,117 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+[raw]
+
+<link rel="stylesheet" type="text/css" href="/wp-content/uploads/2014/10/style.css" />
 
 <div id="container">
-	<div id="header">
-		<!--Main heading for the webpage -->
-    <h1>
-			ISEMaker Documentation
-		</h1>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact us</a></li>
-		</ul>
-	</div>
-	<div id="content-container1">
-		<div id="content-container2">
-		
-			<!-- Left column -->
-			<div id="section-navigation">
-				<ul>
-					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
-					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
-					<ul style="padding-left:2em">
-						<li><a href="ESXi_install.html">1a. Details on Installing ESXi</li>
-						<li><a href="ESXi_IP.html">1b. Set a static IP Address on ESXi</li>
-					</ul>
-					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
-					<li><a href="ESXi_Install_VMs.html">3. Install the Virtual Machines</a></li>
-				</ul>
-			</div>
+	<div id="content-container">
+		<!-- Center column --> 
+		<div id="content">
+            <h2>
+				Overview	
+			</h2>
+			<p>
+				This section provides detailed instructions on the ESXi install process.	
+			</p>
+			<h2>
+				ESXi Install
+			</h2>
+			<p>
+				After downloading the ESXi ISO image and burning it to a CD, use the CD to boot the server into the ESXi installer (note: it is easier to install ESXi onto a blank hard drive). After the ESXi installer boots you will be presented with the welcome screen. 
+			</p>
+				
+			<!-- Add the image for the ESXi installer welcome screen (figure 1) -->
+			<br />
+			<p class="figure_center" id="figure_1"> <a href="/wp-content/uploads/2014/10/1-Welcome.png"><img src="/wp-content/uploads/2014/10/1-Welcome.png" alt="ESXi Installer Welcome Screen" width="50%"> </a>
+			<br />
+			<br />
+			Figure 1: ESXi Installer Welcome Screen</p>
+			<br />
+				
+			<p>
+				Press enter to continue. Next you will be presented with the License Agreement for ESXi. Press the F11 key to accept the license and continue.
+			</p>
 			
-			<!-- Center column --> 
-			<div id="content">
-				<h2>
-					ESXi Install
-				</h2>
-				<p>
-					After downloading the ESXi ISO image and burning it to a CD, use the CD to boot the server into the ESXi installer (note: it is easier to install ESXi onto a blank hard drive). After the ESXi installer boots you will be presented with the welcome screen. 
-				</p>
-					
-				<!-- Add the image for the ESXi installer welcome screen (figure 1) -->
-				<br />
-				<p class="figure_center" id="figure_1"> <img src="images/1-Welcome.png" alt="ESXi Installer Welcome Screen" width="50%"> 
-				<br />
-				<br />
-				Figure 1: ESXi Installer Welcome Screen</p>
-				<br />
-					
-				<p>
-					Press enter to continue. Next you will be presented with the License Agreement for ESXi. Press the F11 key to accept the license and continue.
-				</p>
-				
-				<!-- Add the image for the ESXi license agreement (figure 2) -->
-				<br />
-				<p class="figure_center" id="figure_2"> <img src="images/2-License.png" alt="ESXi License Agreement" width="50%"> 
-				<br />
-				<br />
-				Figure 2: ESXi License Agreement</p>
-				<br />
-				
-				<p>
-					Next, the ESXi installer will ask you where to install ESXi. Select the desired hard drive (if your server has more than one) and then click enter to continue.
-				</p>
-				
-				<!-- Add the image for the ESXi install location (figure 3) -->
-				<br />
-				<p class="figure_center" id="figure_3"> <img src="images/3-Disk.png" alt="ESXi Install Location" width="50%"> 
-				<br />
-				<br />
-				Figure 3: ESXi Install Location</p>
-				<br />
-				
-				<p>
-					Next, the ESXi installer will ask you for your keyboard layout language. Select the language appropriate for your keyboard and press enter. 
-				</p>
-				
-				<!-- Add the image for the keyboard language (figure 4) -->
-				<br />
-				<p class="figure_center" id="figure_4"> <img src="images/4-Language.png" alt="Keyboard Language" width="50%"> 
-				<br />
-				<br />
-				Figure 4: Keyboard Language</p>
-				<br />
-				
-				<p>
-					Next, the ESXi installer will ask you to create a root password. Enter a root password and remember it. You will need it later to continue installing ISEAGE.
-				</p>
-				
-				<!-- Add the image for the ESXi root password (figure 5) -->
-				<br />
-				<p class="figure_center" id="figure_5"> <img src="images/5-Password.png" alt="ESXi Root Password" width="50%"> 
-				<br />
-				<br />
-				Figure 5: ESXi Root Password</p>
-				<br />
-				
-				<p>
-					After setting the root password, the ESXi installer will ask for conformation for install ESXi. Press the F11 key to start installing ESXi.
-				</p>
-				
-				<!-- Add the image for the ESXi conformation (figure 6) -->
-				<br />
-				<p class="figure_center" id="figure_6"> <img src="images/6-Install.png" alt="Confirm Installation" width="50%"> 
-				<br />
-				<br />
-				Figure 6: Confirm Installation</p>
-				<br />
-				
-				<p>
-					ESXi will now install itself on your server. After the installation completes you will be presented with a screen similar to <a href="#figure_7"> Figure 7 </a>. Press enter to reboot your server.
-				</p>
-				
-				<!-- Add the image for the ESXi conformation (figure 7) -->
-				<br />
-				<p class="figure_center" id="figure_7"> <img src="images/7-Done.png" alt="Installation Complete" width="50%"> 
-				<br />
-				<br />
-				Figure 7: Installation Complete</p>
-				<br />
-				
-				<p>
-					After rebooting your server, ESXi should start. After ESXi finishes loading, you should be presented with a screen similar to <a href="#figure_8"> Figure 8 </a>. ESXi is configured to get an IP address by DHCP by default. If you need to set up a static IP address follow in the instructions in <a href="ESXi_IP.html">1b. Setting a static IP Address on ESXi</a>. Otherwise, <a href="ESXi_config.html#Configure_ESXi">click here</a> to continue installing ISEAGE.
-				</p>
-				
-				<!-- Add the image for the ESXi Main Screen(figure 8) -->
-				<br />
-				<p class="figure_center" id="figure_8"> <img src="images/8-Main_Screen.png" alt="ESXi Main Screen" width="70%"> 
-				<br />
-				<br />
-				Figure 8: ESXi Main Screen</p>
-				<br />
-				
-				
-			<!-- Right column -->
-			</div>
-			<div id="aside">
-				<h3>
-					Overview	
-				</h3>
-				<p>
-					This section provides detailed instructions on the ESXi install process.	
-				</p>
-			</div>
-			<div id="footer">
-        Updated: September 9, 2014
-			</div>
+			<!-- Add the image for the ESXi license agreement (figure 2) -->
+			<br />
+			<p class="figure_center" id="figure_2"> <a href="/wp-content/uploads/2014/10/2-License.png"><img src="/wp-content/uploads/2014/10/2-License.png" alt="ESXi License Agreement" width="50%"> </a>
+			<br />
+			<br />
+			Figure 2: ESXi License Agreement</p>
+			<br />
+			
+			<p>
+				Next, the ESXi installer will ask you where to install ESXi. Select the desired hard drive (if your server has more than one) and then click enter to continue.
+			</p>
+			
+			<!-- Add the image for the ESXi install location (figure 3) -->
+			<br />
+			<p class="figure_center" id="figure_3"> <a href="/wp-content/uploads/2014/10/3-Disk.png"><img src="/wp-content/uploads/2014/10/3-Disk.png" alt="ESXi Install Location" width="50%"> </a>
+			<br />
+			<br />
+			Figure 3: ESXi Install Location</p>
+			<br />
+			
+			<p>
+				Next, the ESXi installer will ask you for your keyboard layout language. Select the language appropriate for your keyboard and press enter. 
+			</p>
+			
+			<!-- Add the image for the keyboard language (figure 4) -->
+			<br />
+			<p class="figure_center" id="figure_4"> <a href="/wp-content/uploads/2014/10/4-Language.png"><img src="/wp-content/uploads/2014/10/4-Language.png" alt="Keyboard Language" width="50%"> </a>
+			<br />
+			<br />
+			Figure 4: Keyboard Language</p>
+			<br />
+			
+			<p>
+				Next, the ESXi installer will ask you to create a root password. Enter a root password and remember it. You will need it later to continue installing ISEAGE.
+			</p>
+			
+			<!-- Add the image for the ESXi root password (figure 5) -->
+			<br />
+			<p class="figure_center" id="figure_5"> <a href="/wp-content/uploads/2014/10/5-Password.png"><img src="/wp-content/uploads/2014/10/5-Password.png" alt="ESXi Root Password" width="50%"> </a>
+			<br />
+			<br />
+			Figure 5: ESXi Root Password</p>
+			<br />
+			
+			<p>
+				After setting the root password, the ESXi installer will ask for conformation for install ESXi. Press the F11 key to start installing ESXi.
+			</p>
+			
+			<!-- Add the image for the ESXi conformation (figure 6) -->
+			<br />
+			<p class="figure_center" id="figure_6"> <a href="/wp-content/uploads/2014/10/6-Install.png"><img src="/wp-content/uploads/2014/10/6-Install.png" alt="Confirm Installation" width="50%"> </a>
+			<br />
+			<br />
+			Figure 6: Confirm Installation</p>
+			<br />
+			
+			<p>
+				ESXi will now install itself on your server. After the installation completes you will be presented with a screen similar to <a href="#figure_7"> Figure 7 </a>. Press enter to reboot your server.
+			</p>
+			
+			<!-- Add the image for the ESXi conformation (figure 7) -->
+			<br />
+			<p class="figure_center" id="figure_7"> <a href="/wp-content/uploads/2014/10/7-Done.png"><img src="/wp-content/uploads/2014/10/7-Done.png" alt="Installation Complete" width="50%"> </a>
+			<br />
+			<br />
+			Figure 7: Installation Complete</p>
+			<br />
+			
+			<p>
+				After rebooting your server, ESXi should start. After ESXi finishes loading, you should be presented with a screen similar to <a href="#figure_8"> Figure 8 </a>. ESXi is configured to get an IP address by DHCP by default. If you need to set up a static IP address follow in the instructions in <a href="/?page_id=231">1b. Setting a static IP Address on ESXi</a>. Otherwise, <a href="/?page_id=214#Configure_ESXi">click here</a> to continue installing ISEAGE.
+			</p>
+			
+			<!-- Add the image for the ESXi Main Screen(figure 8) -->
+			<br />
+			<p class="figure_center" id="figure_8"> <a href="/wp-content/uploads/2014/10/8-Main_Screen.png"><img src="/wp-content/uploads/2014/10/8-Main_Screen.png" alt="ESXi Main Screen" width="70%"> </a>
+			<br />
+			<br />
+			Figure 8: ESXi Main Screen</p>
+			<br />
 		</div>
 	</div>
 </div>
+
+[/raw]
