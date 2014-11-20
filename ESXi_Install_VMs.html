@@ -1,230 +1,201 @@
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+[raw]
+
+<link rel="stylesheet" type="text/css" href="/wp-content/uploads/2014/10/style.css" />
 
 <div id="container">
-	<div id="header">
-		<!--Main heading for the webpage -->
-    <h1>
-			ISEMaker Documentation 
-		</h1>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact us</a></li>
-		</ul>
-	</div>
-	<div id="content-container1">
-		<div id="content-container2">
-		
-			<!-- Left column -->
-			<div id="section-navigation">
-				<ul>
-					<li><a href="ISEMaker.html">A. ISEMaker Overview</a></li>
-					<li><a href="ESXi_config.html">1. Install and Configure ESXi</a></li>
-					<li><a href="ESXi_VM_Network_config.html">2. Configure the Virtual Network</a></li>
-					<li><a href="ESXi_Install_VMs.thml">3. Install Virtual Machines</a></li>
-				</ul>
-			</div>
-			
-			<!-- Center column --> 
-			<div id="content">
-				<h2>
-					Install Virtual Machines	
-				</h2>
-				<p>
-					In this section we will download and install the Virtual Machines images to build ISEAGE. All network connections should automatically be made if the network
-					is configured correctly. 
-				        
-				</p>
-		
-				<p class="note">
-					Note: It is highly recommended that you connection to your server be through a wired connection with a gigabit switch since the files to be transfered to the 
-					server are quite large.	
-				</p>
-					
-
-				<h2>
-					Download Virtual Machines
-				</h2>	
-			
-				<p>
-					<b><i>This is a placeholder section for now since we do not have the server space yet to upload the images to. </i></b>
-				</p>
-
-
-				<h2>
-					Install the Virtual Machines
-				</h2>
-
-				<ol>
-
-					<p>
-						<li> First, unzip all of the virtual machine images. ESXi needs to images to be uncompressed.	</li>
-					</p>
-
-					<p>
-						<li> After unzipping the Virtual Machine images, we need to open up the datastore browser on ESXi. First, log into ESXi if not already, then go
-					        to <b>Configuration</b> then <b>Storage</b> and the right click on your datastore and then go to <b>Browse Datastore...</b> </li>
-					</p>
+	<div id="content-container">
+		<!-- Center column --> 
+		<div id="content">
+            <h2>
+				Overview	
+			</h2>
+			<p>
+				In this section, you will install the Virtual Machines for ISEAGE and configure them.	
+			</p>
+			<h2>
+				Install Virtual Machines	
+			</h2>
+			<p>
+				In this section we will download and install the Virtual Machines images to build ISEAGE. All network connections should automatically be made if the network
+				is configured correctly. 
+			        
+			</p>
+	
+			<p class="note">
+				Note: It is highly recommended that you connection to your server be through a wired connection with a gigabit switch since the files to be transfered to the 
+				server are quite large.	
+			</p>
 				
-					<!-- Add the image for opening up the datastore -->
-					<br />
-						<p class="figure_center" id="figure_1"> <img src="images/ESXi_browse_datastore.png" alt="Figure 1: Browse Datastore" width="75%"> 
-					<br />
-					<br />
-						Figure 1: Browse Datastore</p>
-					<br />
 
-					<p>
-						<li> The datastore browser will look similar to <a href="#figure_2"> Figure 2 </a>. Next, make sure the root folder (/) of the datastore is highlighted 
-						and then click the upload button, and choose upload folder. Choose the folder that contains one of the Virtual Machines. Repeat this process for
-						all of the Virtual Machines. </li> 
-					</p>
-
-					<!-- Add the image for using the datastore -->
-					<br />
-						<p class="figure_center" id="figure_2"> <img src="images/ESXi_upload_VM.png" alt="Figure 2: Datastore Browser" width="75%"> 
-					<br />
-					<br />
-						Figure 2: Datastore Browser</p>
-					<br />
-					
-					<p class="note">
-						<li> Note: It is possible to have multiple uploads running in parallel. This can substantially reduce the amount of time needed to upload the images. </li>
-					</p>
-
-					<p>
-						<li> After uploading all of the VMs to the server, we need to add all of the VMs to ESXi. To do this, click on one of the VM folders. Then find the Virtual
-						Machine file (ending in .vmx) and click it to highlight the file. After highlighting the Virtual Machine file, click on the button in the upper left 
-						corner of the Database Browser window to add the virtual machine to the inventory. A window will open. Leave the Virtual Machine name alone and
-						click <b>next</b>. On the following window also click <b>next</b>. On the final window click <b>finish</b>. Repeat these steps for all of the 
-						Virtual Machines. </li>
-					</p>
-					
-					<!-- Add the image for adding the VM to the inventory-->
-					<br />
-						<p class="figure_center" id="figure_3"> <img src="images/add_VM.png" alt="Figure 3: Add VM to Inventory" width="75%"> 
-					<br />
-					<br />
-						Figure 3: Add VM to Inventory</p>
-					<br />
-
-					<p>
-						<li> After adding all of the Virtual Machines to the inventory, we need to manually start up all of the Virtual Machines to allow ESXi to update there 
-						configuration information. Go to the <b>Virtual Machines</b> tab on the main ESXi window. <b>Right-click</b> on the first Virtual Machine and go
-						to <b>Open Console</b>.  </li>
-					</p>
-					
-					<!-- Add the image for powering on the Virtual Machine-->
-					<br />
-						<p class="figure_center" id="figure_4"> <img src="images/VM_console.png" alt="Figure 4: Open VM Console" width="75%"> 
-					<br />
-					<br />
-						Figure 4: Open VM Console</p>
-					<br />
-					
-
-					<p>
-						<li> In the VM console window, click the <b>Green Play Button</b> to start the Virtual Machine. </li>
-					</p>
-
-					<!-- Add the image for powering on the Virtual Machine-->
-					<br />
-						<p class="figure_center" id="figure_5"> <img src="images/VM_console_window.png" alt="Figure 5: Start the VM" width="50%"> 
-					<br />
-					<br />
-						Figure 5: Start the VM</p>
-					<br />
-					
-					<p>
-						<li> A window will pop up asking if you moved or copied the Virtual Machine. Check the <b>Copied it</b> option and then click <b>OK</b>. Repeat these last two
-						steps for the rest of the Virtual Machines. </li>
-					</p>
-
-					<!-- Add the image for powering on the Virtual Machine-->
-					<br />
-						<p class="figure_center" id="figure_6"> <img src="images/ESXi_new_VM_question.png" alt="Figure 6: VM First Boot Message" width="50%"> 
-					<br />
-					<br />
-						Figure 6: VM First Boot Message</p>
-					<br />
-
-					<p>
-						<li> At this point all of the Virtual Machines should be installed and configured correctly. Next, we are going to configure the auto-start feature
-						of ESXi to start up the Virtual Machines in the correct order whenever the physical server is powered up. </li>
-					</p>
+			<h2>
+				Download Virtual Machines
+			</h2>	
+		
+			<p>
+				<b><i>This is a placeholder section for now since we do not have the server space yet to upload the images to. </i></b>
+			</p>
 
 
-					<h2>
-						Configure Auto-startup	
-					</h2>
+			<h2>
+				Install the Virtual Machines
+			</h2>
 
-					<p>
-						<li> In this section we will configure the Virtual Machines to automatically start up in the correct order when the physical server is started. Go
-						to the <b>Configuration</b> tab, click on <b>Virtual Machine Startup/Shutdown</b> and then click <b>Properties</b>. </li>
-					</p>
+			<ol>
 
-					<!-- Add the image for getting to the VM startup/shutdown configuration window-->
-					<br />
-						<p class="figure_center" id="figure_7"> <img src="images/VM_startup.png" alt="Figure 7: VM Startup/Shutdown Configuration" width="75%"> 
-					<br />
-					<br />
-						Figure 7: VM Startup/Shutdown Configuration</p>
-					<br />
-
-					<p>
-						<li> In the configuration window which opens up, check the two options in the upper left side of the window. </li>
-					</p>
-
-					<!-- Add the image for getting to the VM startup/shutdown configuration window 1-->
-					<br />
-						<p class="figure_center" id="figure_8"> <img src="images/VM_startup_config1.png" alt="Figure 8: VM Startup/Shutdown Options" width="75%"> 
-					<br />
-					<br />
-						Figure 8: VM Startup/Shutdown Options</p>
-					<br />
-
-					<p>
-						<li> Now we will configure the order in which the Virtual Machines will start up. First find the <b>Snowbank</b> Virtual Machine and click it
-						to highlight it. Now, repeatedly click on the <b>Move Up</b> button to move the Snowbank VM into the <b>Automatic Startup</b> section.  </li>
-					</p>
-
-					<!-- Add the image for setting Snowbank to autostart --> 
-					<br />
-						<p class="figure_center" id="figure_9"> <img src="images/snowbank_autostart.png" alt="Figure 9: Snowbank Autostart" width="50%"> 
-					<br />
-					<br />
-						Figure 9: Snowbank Autostart</p>
-					<br />
-					
-					<p>
-						Continue this process for the rest of the VMs until the startup order is the same as in <a href="#figure_10">Figure 10</a>.
-					</p>
-
-					<!-- Add the image for setting Snowbank to autostart --> 
-					<br />
-						<p class="figure_center" id="figure_10"> <img src="images/startup_order.png" alt="Figure 10: Startup Order" width="50%"> 
-					<br />
-					<br />
-						Figure 10: Startup Order</p>
-					<br />
-
-				</ol>
-
-			<!-- Right column -->
-			</div>
-			<div id="aside">
-				<h3>
-					Overview	
-				</h3>
 				<p>
-					In this section, you will install the Virtual Machines for ISEAGE and configure them.	
+					<li> First, unzip all of the virtual machine images. ESXi needs to images to be uncompressed.	</li>
 				</p>
-			</div>
-			<div id="footer">
-        Updated: September 8, 2014
-			</div>
+
+				<p>
+					<li> After unzipping the Virtual Machine images, we need to open up the datastore browser on ESXi. First, log into ESXi if not already, then go
+				        to <b>Configuration</b> then <b>Storage</b> and the right click on your datastore and then go to <b>Browse Datastore...</b> </li>
+				</p>
+			
+				<!-- Add the image for opening up the datastore -->
+				<br />
+					<p class="figure_center" id="figure_1"><a href="/wp-content/uploads/2014/10/ESXi_browse_datastore.png"><img src="/wp-content/uploads/2014/10/ESXi_browse_datastore.png" alt="Figure 1: Browse Datastore" width="75%"></a>
+				<br />
+				<br />
+					Figure 1: Browse Datastore</p>
+				<br />
+
+				<p>
+					<li> The datastore browser will look similar to <a href="#figure_2">Figure 2</a>. Next, make sure the root folder (/) of the datastore is highlighted 
+					and then click the upload button, and choose upload folder. Choose the folder that contains one of the Virtual Machines. Repeat this process for
+					all of the Virtual Machines. </li> 
+				</p>
+
+				<!-- Add the image for using the datastore -->
+				<br />
+					<p class="figure_center" id="figure_2"><a href="/wp-content/uploads/2014/10/ESXi_upload_VM.png"><img src="/wp-content/uploads/2014/10/ESXi_upload_VM.png" alt="Figure 2: Datastore Browser" width="75%"></a>
+				<br />
+				<br />
+					Figure 2: Datastore Browser</p>
+				<br />
+				
+				<p class="note">
+					<li> Note: It is possible to have multiple uploads running in parallel. This can substantially reduce the amount of time needed to upload the images. </li>
+				</p>
+
+				<p>
+					<li> After uploading all of the VMs to the server, we need to add all of the VMs to ESXi. To do this, click on one of the VM folders. Then find the Virtual
+					Machine file (ending in .vmx) and click it to highlight the file. After highlighting the Virtual Machine file, click on the button in the upper left 
+					corner of the Database Browser window to add the virtual machine to the inventory. A window will open. Leave the Virtual Machine name alone and
+					click <b>next</b>. On the following window also click <b>next</b>. On the final window click <b>finish</b>. Repeat these steps for all of the 
+					Virtual Machines. </li>
+				</p>
+				
+				<!-- Add the image for adding the VM to the inventory-->
+				<br />
+					<p class="figure_center" id="figure_3"><a href="/wp-content/uploads/2014/10/Add_VM.png"><img src="/wp-content/uploads/2014/10/Add_VM.png" alt="Figure 3: Add VM to Inventory" width="75%"></a>
+				<br />
+				<br />
+					Figure 3: Add VM to Inventory</p>
+				<br />
+
+				<p>
+					<li> After adding all of the Virtual Machines to the inventory, we need to manually start up all of the Virtual Machines to allow ESXi to update there 
+					configuration information. Go to the <b>Virtual Machines</b> tab on the main ESXi window. <b>Right-click</b> on the first Virtual Machine and go
+					to <b>Open Console</b>.  </li>
+				</p>
+				
+				<!-- Add the image for powering on the Virtual Machine-->
+				<br />
+					<p class="figure_center" id="figure_4"><a href="/wp-content/uploads/2014/10/VM_console.png"><img src="/wp-content/uploads/2014/10/VM_console.png" alt="Figure 4: Open VM Console" width="75%"></a>
+				<br />
+				<br />
+					Figure 4: Open VM Console</p>
+				<br />
+				
+
+				<p>
+					<li> In the VM console window, click the <b>Green Play Button</b> to start the Virtual Machine. </li>
+				</p>
+
+				<!-- Add the image for powering on the Virtual Machine-->
+				<br />
+					<p class="figure_center" id="figure_5"><a href="/wp-content/uploads/2014/10/VM_console_window.png"><img src="/wp-content/uploads/2014/10/VM_console_window.png" alt="Figure 5: Start the VM" width="50%"></a>
+				<br />
+				<br />
+					Figure 5: Start the VM</p>
+				<br />
+				
+				<p>
+					<li> A window will pop up asking if you moved or copied the Virtual Machine. Check the <b>Copied it</b> option and then click <b>OK</b>. Repeat these last two
+					steps for the rest of the Virtual Machines. </li>
+				</p>
+
+				<!-- Add the image for powering on the Virtual Machine-->
+				<br />
+					<p class="figure_center" id="figure_6"><a href="/wp-content/uploads/2014/10/ESXi_new_VM_question.png"><img src="/wp-content/uploads/2014/10/ESXi_new_VM_question.png" alt="Figure 6: VM First Boot Message" width="50%"></a>
+				<br />
+				<br />
+					Figure 6: VM First Boot Message</p>
+				<br />
+
+				<p>
+					<li> At this point all of the Virtual Machines should be installed and configured correctly. Next, we are going to configure the auto-start feature
+					of ESXi to start up the Virtual Machines in the correct order whenever the physical server is powered up. </li>
+				</p>
+
+
+				<h2>
+					Configure Auto-startup	
+				</h2>
+
+				<p>
+					<li> In this section we will configure the Virtual Machines to automatically start up in the correct order when the physical server is started. Go
+					to the <b>Configuration</b> tab, click on <b>Virtual Machine Startup/Shutdown</b> and then click <b>Properties</b>. </li>
+				</p>
+
+				<!-- Add the image for getting to the VM startup/shutdown configuration window-->
+				<br />
+					<p class="figure_center" id="figure_7"><a href="/wp-content/uploads/2014/10/VM_startup.png"><img src="/wp-content/uploads/2014/10/VM_startup.png" alt="Figure 7: VM Startup/Shutdown Configuration" width="75%"></a>
+				<br />
+				<br />
+					Figure 7: VM Startup/Shutdown Configuration</p>
+				<br />
+
+				<p>
+					<li> In the configuration window which opens up, check the two options in the upper left side of the window. </li>
+				</p>
+
+				<!-- Add the image for getting to the VM startup/shutdown configuration window 1-->
+				<br />
+					<p class="figure_center" id="figure_8"><a href="/wp-content/uploads/2014/10/VM_startup_config1.png"><img src="/wp-content/uploads/2014/10/VM_startup_config1.png" alt="Figure 8: VM Startup/Shutdown Options" width="75%"></a>
+				<br />
+				<br />
+					Figure 8: VM Startup/Shutdown Options</p>
+				<br />
+
+				<p>
+					<li> Now we will configure the order in which the Virtual Machines will start up. First find the <b>Snowbank</b> Virtual Machine and click it
+					to highlight it. Now, repeatedly click on the <b>Move Up</b> button to move the Snowbank VM into the <b>Automatic Startup</b> section.  </li>
+				</p>
+
+				<!-- Add the image for setting Snowbank to autostart --> 
+				<br />
+					<p class="figure_center" id="figure_9"><a href="/wp-content/uploads/2014/10/snowbank_autostart.png"><img src="/wp-content/uploads/2014/10/snowbank_autostart.png" alt="Figure 9: Snowbank Autostart" width="50%"></a>
+				<br />
+				<br />
+					Figure 9: Snowbank Autostart</p>
+				<br />
+				
+				<p>
+					Continue this process for the rest of the VMs until the startup order is the same as in <a href="#figure_10">Figure 10</a>.
+				</p>
+
+				<!-- Add the image for setting Snowbank to autostart --> 
+				<br />
+					<p class="figure_center" id="figure_10"><a href="/wp-content/uploads/2014/10/startup_order.png"><img src="/wp-content/uploads/2014/10/startup_order.png" alt="Figure 10: Startup Order" width="50%"></a>
+				<br />
+				<br />
+					Figure 10: Startup Order</p>
+				<br />
+                
+			</ol>
 		</div>
 	</div>
 </div>
+
+[/raw]
