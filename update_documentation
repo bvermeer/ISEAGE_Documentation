@@ -2,15 +2,17 @@
 #
 
 # Author: Matt Weidman
-# Date: 10/28/2014
-# Description: This script will update the documentation section of iserink.org based on
+# Date: 11/19/2014
+# Description: This script will update the documentation section of iserink.org 
 #              to reflect any changes committed to the git repo 
-#              git@github.com:mweidman/ISEAGE_Documentation.git
+#              git@github.com:bvermeer/ISEAGE_Documentation.git
 
+echo "Updating ISERINK.org documentation..."
 git pull
-mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/iseage_documentation/ISEAGE_Documentation/ISEMaker.html") WHERE guid="http://iserink.org/?page_id=21"'
-mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/iseage_documentation/ISEAGE_Documentation/ESXi_config.html") WHERE guid="http://iserink.org/?page_id=214"'
-mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/iseage_documentation/ISEAGE_Documentation/ESXi_install.html") WHERE guid="http://iserink.org/?page_id=218"'
-mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/iseage_documentation/ISEAGE_Documentation/ESXi_IP.html") WHERE guid="http://iserink.org/?page_id=231"'
-mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/iseage_documentation/ISEAGE_Documentation/ESXi_VM_Network_config.html") WHERE guid="http://iserink.org/?page_id=233"'
-mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/iseage_documentation/ISEAGE_Documentation/ESXi_Install_VMs.html") WHERE guid="http://iserink.org/?page_id=235"'
+mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/documentation/ISEAGE_Documentation/ISEMaker.html") WHERE guid="http://iserink.org/?page_id=21"'
+mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/documentation/ISEAGE_Documentation/ESXi_config.html") WHERE guid="http://iserink.org/?page_id=214"'
+mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/documentation/ISEAGE_Documentation/ESXi_install.html") WHERE guid="http://iserink.org/?page_id=218"'
+mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/documentation/ISEAGE_Documentation/ESXi_IP.html") WHERE guid="http://iserink.org/?page_id=231"'
+mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/documentation/ISEAGE_Documentation/ESXi_VM_Network_config.html") WHERE guid="http://iserink.org/?page_id=233"'
+mysql -D wordpress -e 'UPDATE wp_posts SET post_content=LOAD_FILE("/root/documentation/ISEAGE_Documentation/ESXi_Install_VMs.html") WHERE guid="http://iserink.org/?page_id=235"'
+echo "Update to ISERINK.org documentation complete."
